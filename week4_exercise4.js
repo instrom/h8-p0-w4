@@ -11,8 +11,6 @@ function cariModus(arr) {
           if(frekuensi > greatestFrekuensi) {
             greatestFrekuensi = frekuensi;
             modus = i;
-            // console.log('modus ke brp' +modus);
-            // console.log('-------')
           }
         }
       }
