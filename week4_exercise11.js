@@ -1,49 +1,35 @@
 function shoppingTime(memberId, money) {
-    var sisa = money;
+    var list = [['Sepatu Stacattu', 1500000], ['Baju Zoro', 500000], ['Baju H&N', 250000], ['Sweater brand Uniklooh', 175000], ['Casing Handphone', 50000]]
     var tampung = [];
-
-    for (var i=0; i < 5; i++) {
-        if (sisa >= 1500000) {
-            tampung.push('Sepatu brand Stacattu');
-            sisa -= 1500000;
-        } else if ( sisa >= 500000) {
-            tampung.push('Baju Zoro');
-            sisa -= 500000
-        } else if ( sisa >= 250000) {
-            tampung.push('Baju H&N');
-            sisa -= 250000;
-        } else if ( sisa >= 175000) {
-            tampung.push('Sweater brand Uniklooh')
-            sisa -= 175000;
-        } else if ( sisa >= 50000) {
-            tampung.push('Casing Handphone')
-            sisa -= 50000;
-            break;
-        }
+    var objectShopping = {
+  
+    }
+    var sisa = money;
+  
+    objectShopping.memberId = memberId;
+    objectShopping.money = money;
+    objectShopping.listPurchased = tampung;
+  
+    for (var i=0; i < list.length; i++) {
+      if(money - list[i][1] >= 0) {
+        tampung.push(list[i][0])
+        money = money - list[i][1]
+      }
+    }
+    objectShopping.changeMoney = money
+  
+    if (memberId === '') {
+      return 'Mohon maaf toko X hanya berlaku untuk member saja'
+    } else if (memberId === undefined && money === undefined) {
+      return 'Mohon maaf toko X hanya berlaku untuk member saja' 
+    } else if (tampung.length === 0) {
+      return 'Mohon maaf uang tidak cukup'
+    }
+  
+    return objectShopping
     // you can only write your code here!
   }
-
-  var objBarang = {
-
-  }
-
-  objBarang.memberId = memberId;
-  objBarang.money = money;
-  objBarang.listPurchased = tampung;
-  objBarang.changeMoney = sisa;
-
-  if (memberId === '' || memberId === undefined && money === undefined) {
-      return 'Mohon maaf, toko X hanya berlaku untuk member saja'
-  } else if (money < 50000) {
-      return 'Mohon maaf, uang tidak cukup'
-  }
-
-  return objBarang;
-}
-
-
-
-  
+     
   // TEST CASES
   console.log(shoppingTime('1820RzKrnWn08', 2475000));
     //{ memberId: '1820RzKrnWn08',
