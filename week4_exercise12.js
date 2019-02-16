@@ -25,13 +25,7 @@ function countProfit(shoppers) {
     }
 
     return arrayTerakhir
-    
-    
-    
-    
-
-
-  // you can only write your code here!
+  // you can only write our code here!
 }
 
 // TEST CASES
