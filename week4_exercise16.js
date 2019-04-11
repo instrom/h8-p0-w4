@@ -2,21 +2,37 @@ function graduates (students) {
     var obj = {}
     for (var i=0; i < students.length; i++) {
       if (obj[students[i].class] === undefined) {
-        obj[students[i].class] = [{
-          name: students[i].name,
-          score: students[i].score
-        }]
+        obj[students[i].class] = []
       }
-      if ([students[i].class].score > 75) {
-        obj[students[i].class] = [{
+      if (students[i].score >= 75) {
+        obj[students[i].class].push({
           name: students[i].name,
           score: students[i].score
-        }]
+        })
       }
     }
     return obj
   // Code disini
 }
+
+
+// function graduates (students) {
+//   var result = {}
+//   for (var i = 0; i < students.length; i++) {
+//       if (result[students[i].class] === undefined) {
+//           result[students[i].class] = []
+//       }
+
+//       if (students[i].score > 75) {
+//           result[students[i].class].push({
+//               name: students[i].name,
+//               score: students[i].score
+//           })
+//       }
+//   }
+//   return result
+// }
+
 
 console.log(graduates([
   {
