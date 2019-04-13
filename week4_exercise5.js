@@ -4,8 +4,10 @@ function ubahHuruf(kata) {
 
     for (var i=0; i < kata.length; i++) {
         for (var j=0; j < alphabet.length; j++) {
-            if (kata[i] === alphabet[j]) {
-                tampung += alphabet[j+1];
+            if(kata[i] === 'z') {
+                tampung += 'a'
+            } else if (kata[i] === alphabet[j]) {
+                tampung += alphabet[j+1]
             }
         }
     } return tampung;
